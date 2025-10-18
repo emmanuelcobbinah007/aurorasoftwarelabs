@@ -75,7 +75,7 @@ export default function Footer() {
                 <li className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 flex-shrink-0" />
                   <span className="text-sm text-white/80 break-all sm:break-normal">
-                    aurorasoftwarelabs@gmail.com
+                    hello@aurorasoftwarelabs.io
                   </span>
                 </li>
                 <li className="flex items-center space-x-2">

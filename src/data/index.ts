@@ -5,7 +5,7 @@ export const companyInfo = {
   vision:
     "To inspire and empower Africa's next generation of innovators by shining a light on the continent's digital future, one solution at a time.",
   values: ["Innovation", "Reliability", "Collaboration", "Integrity", "Impact"],
-  email: "aurorasoftwarelabs@gmail.com",
+  email: "hello@aurorasoftwarelabs.io",
   location: "Ghana",
 };
 
@@ -97,6 +97,22 @@ export const projects = [
       "Nodemailer",
     ],
     category: "Professional Website",
+  },
+  {
+    id: "vote-aurora",
+    title: "VoteAurora",
+    description:
+      "A secure and modern e-voting platform built for universities and organizations. VoteAurora enables seamless election setup, real-time monitoring, and transparent results through an intuitive admin dashboard and voter-friendly interface.",
+    url: "https://vote.aurorasoftwarelabs.io",
+    image: "/voteauroramockup.png",
+    technologies: [
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "ShadCN/UI",
+      "PostgreSQL",
+    ],
+    category: "E-Voting Platform",
   },
 ];
 
