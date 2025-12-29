@@ -1,11 +1,18 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const poppins = Poppins({
   variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -77,7 +84,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        <SmoothScroll />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

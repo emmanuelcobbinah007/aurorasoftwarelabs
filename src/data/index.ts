@@ -79,6 +79,32 @@ export const projects = [
     category: "E-Voting Platform",
   },
   {
+    id: "laropa-kioki",
+    title: "Laropa Kioki E-Commerce Site",
+    description:
+      "A Business Intelligence Engine that helps founders validate ideas and make confident business decisions faster, without hiring agencies or drowning in tools",
+    url: "https://geniy.aurorasoftwarelabs.io",
+    image: "/Geniy.png",
+    technologies: ["NextJs", "ExpressJS", "Openrouter", "Manus", "AWS"],
+    category: "Artificial Intelligence",
+  },
+  {
+    id: "vote-aurora",
+    title: "VoteAurora",
+    description:
+      "A secure and modern e-voting platform built for universities and organizations. VoteAurora enables seamless election setup, real-time monitoring, and transparent results through an intuitive admin dashboard and voter-friendly interface.",
+    url: "https://vote.aurorasoftwarelabs.io",
+    image: "/voteauroramockup.png",
+    technologies: [
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "ShadCN/UI",
+      "PostgreSQL",
+    ],
+    category: "E-Voting Platform",
+  },
+  {
     id: "lolyraced-ventures",
     title: "Lolyraced Ventures",
     description:

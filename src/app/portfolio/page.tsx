@@ -40,11 +40,7 @@ export default function PortfolioPage() {
 
       {/* Hero Section */}
       <section
-        className={`pt-32 pb-12 ${
-          theme === "dark"
-            ? "bg-gray-900"
-            : "bg-gradient-to-br from-white to-gray-50"
-        }`}
+        className={`pt-32 pb-12 bg-gray-950`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -55,17 +51,13 @@ export default function PortfolioPage() {
           >
             <motion.h1
               variants={fadeInUp}
-              className={`text-4xl font-bold tracking-tight ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } sm:text-6xl`}
+              className={`text-4xl font-bold font-space tracking-tight text-white sm:text-6xl`}
             >
               Our Portfolio
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className={`mt-6 text-lg leading-8 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className={`mt-6 text-lg leading-8 text-gray-400`}
             >
               Explore our recent projects and see how we've helped businesses
               across Africa achieve their digital goals through innovative
@@ -151,16 +143,12 @@ export default function PortfolioPage() {
                 >
                   <div>
                     <h2
-                      className={`text-3xl font-bold ${
-                        theme === "dark" ? "text-white" : "text-gray-900"
-                      }`}
+                      className={`text-3xl font-bold font-space text-white`}
                     >
                       {project.title}
                     </h2>
                     <p
-                      className={`mt-4 text-lg leading-7 ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-600"
-                      }`}
+                      className={`mt-4 text-lg leading-7 text-gray-400`}
                     >
                       {project.description}
                     </p>
@@ -169,9 +157,7 @@ export default function PortfolioPage() {
                   {/* Technologies Used */}
                   <div>
                     <h3
-                      className={`text-lg font-semibold ${
-                        theme === "dark" ? "text-white" : "text-gray-900"
-                      } mb-3 flex items-center`}
+                      className={`text-lg font-semibold font-space text-white mb-3 flex items-center`}
                     >
                       <Tag className="h-5 w-5 mr-2 text-[#67c970]" />
                       Technologies Used
@@ -182,7 +168,7 @@ export default function PortfolioPage() {
                           key={tech}
                           className={`inline-flex items-center rounded-md px-3 py-1 text-sm font-medium ${
                             theme === "dark"
-                              ? "bg-gray-700 text-gray-300"
+                              ? "bg-gray-800 text-gray-300 border border-white/5"
                               : "bg-gray-100 text-gray-700"
                           }`}
                         >
@@ -195,15 +181,13 @@ export default function PortfolioPage() {
                   {/* Project Highlights */}
                   <div>
                     <h3
-                      className={`text-lg font-semibold ${
-                        theme === "dark" ? "text-white" : "text-gray-900"
-                      } mb-3`}
+                      className={`text-lg font-semibold font-space text-white mb-3`}
                     >
                       Key Features
                     </h3>
                     <ul
                       className={`space-y-2 ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-600"
+                        theme === "dark" ? "text-gray-400" : "text-gray-600"
                       }`}
                     >
                       {project.id === "laropa-kioki" && (
@@ -300,7 +284,7 @@ export default function PortfolioPage() {
 
       {/* Project Stats */}
       <section
-        className={`py-16 ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"}`}
+        className={`py-20 bg-gray-900`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -312,17 +296,13 @@ export default function PortfolioPage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className={`text-3xl font-bold tracking-tight ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } sm:text-4xl`}
+              className={`text-3xl font-bold font-space tracking-tight text-white sm:text-4xl`}
             >
               Project Impact
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className={`mt-4 text-lg leading-8 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className={`mt-4 text-lg leading-8 text-gray-400`}
             >
               The measurable results our clients have achieved
             </motion.p>
@@ -337,9 +317,7 @@ export default function PortfolioPage() {
           >
             <motion.div variants={fadeInUp}>
               <Card
-                className={`text-center h-full border border-white/10 ${
-                  theme === "dark" ? "bg-gray-700" : "bg-white"
-                }`}
+                className={`text-center h-full border border-white/5 bg-gray-800`}
               >
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-white mb-2">100%</div>
@@ -363,9 +341,7 @@ export default function PortfolioPage() {
 
             <motion.div variants={fadeInUp}>
               <Card
-                className={`text-center h-full border border-white/10 ${
-                  theme === "dark" ? "bg-gray-700" : "bg-white"
-                }`}
+                className={`text-center h-full border border-white/5 bg-gray-800`}
               >
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-[#67c970] mb-2">
@@ -391,9 +367,7 @@ export default function PortfolioPage() {
 
             <motion.div variants={fadeInUp}>
               <Card
-                className={`text-center h-full border border-white/10 ${
-                  theme === "dark" ? "bg-gray-700" : "bg-white"
-                }`}
+                className={`text-center h-full border border-white/5 bg-gray-800`}
               >
                 <CardContent className="pt-6">
                   <div className="text-4xl font-bold text-white mb-2">
@@ -434,17 +408,13 @@ export default function PortfolioPage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className={`text-3xl font-bold tracking-tight ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } sm:text-4xl`}
+              className={`text-3xl font-bold font-space tracking-tight text-white sm:text-4xl`}
             >
               What Our Clients Say
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className={`mt-4 text-lg leading-8 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className={`mt-4 text-lg leading-8 text-gray-400`}
             >
               Direct feedback from the businesses we've helped transform
             </motion.p>
@@ -458,7 +428,7 @@ export default function PortfolioPage() {
             className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
           >
             <motion.div variants={fadeInUp}>
-              <Card className={`h-full bg-gray-800 border border-white/10`}>
+              <Card className={`h-full bg-gray-900 border border-white/5`}>
                 <CardContent className="p-6">
                   <p className={`mb-4 text-gray-300`}>
                     "Aurora Software Labs transformed our fashion brand's online
@@ -486,7 +456,7 @@ export default function PortfolioPage() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className={`h-full bg-gray-800 border border-white/10`}>
+              <Card className={`h-full bg-gray-900 border border-white/5`}>
                 <CardContent className="p-6">
                   <p
                     className={`mb-4 ${
@@ -512,7 +482,7 @@ export default function PortfolioPage() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className={`h-full bg-gray-800 border border-white/10`}>
+              <Card className={`h-full bg-gray-900 border border-white/5`}>
                 <CardContent className="p-6">
                   <p
                     className={`mb-4 ${
@@ -547,7 +517,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#67c970]">
+      <section className="py-20 bg-[#67c970]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -557,16 +527,12 @@ export default function PortfolioPage() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2
-              className={`text-2xl font-bold tracking-tight ${
-                theme === "dark" ? "text-gray-900" : "text-black"
-              } sm:text-3xl lg:text-4xl`}
+              className={`text-2xl font-bold font-space tracking-tight text-black sm:text-3xl lg:text-4xl`}
             >
               Ready to Write Your Success Story?
             </h2>
             <p
-              className={`mt-6 text-base leading-7 ${
-                theme === "dark" ? "text-gray-900/80" : "text-black/80"
-              } sm:text-lg sm:leading-8`}
+              className={`mt-6 text-base leading-7 text-black/80 sm:text-lg sm:leading-8`}
             >
               Let's create something amazing together. Your project could be our
               next featured success story.
