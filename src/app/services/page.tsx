@@ -68,11 +68,7 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <section
-        className={`pt-32 pb-12 ${
-          theme === "dark"
-            ? "bg-gray-900"
-            : "bg-gradient-to-br from-white to-gray-50"
-        }`}
+        className={`pt-32 pb-12 bg-gray-950`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -83,17 +79,13 @@ export default function ServicesPage() {
           >
             <motion.h1
               variants={fadeInUp}
-              className={`text-4xl font-bold tracking-tight ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } sm:text-6xl`}
+              className={`text-4xl font-bold font-space tracking-tight text-white sm:text-6xl`}
             >
               Our Services
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className={`mt-6 text-lg leading-8 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className={`mt-6 text-lg leading-8 text-gray-400`}
             >
               Comprehensive digital solutions designed to empower your business
               and drive meaningful growth in today's competitive landscape.
@@ -104,7 +96,7 @@ export default function ServicesPage() {
 
       {/* Services List */}
       <section
-        className={`py-16 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}
+        className={`py-20 bg-gray-950`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -126,18 +118,16 @@ export default function ServicesPage() {
                   }`}
                 >
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <Card
-                      className={`h-full border border-white/10 ${
-                        theme === "dark" ? "bg-gray-800" : "bg-white"
-                      }`}
-                    >
+                      <Card
+                        className={`h-full border border-white/5 bg-gray-900 hover:border-[#67c970]/30 transition-all duration-300`}
+                      >
                       <CardHeader>
                         <div className="flex items-center space-x-4">
                           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
                             <IconComponent className="h-8 w-8 text-white" />
                           </div>
                           <div>
-                            <CardTitle className="text-2xl text-white/90">
+                            <CardTitle className="text-2xl font-space text-white">
                               {service.title}
                             </CardTitle>
                             <div className="flex items-center mt-2">
@@ -147,11 +137,7 @@ export default function ServicesPage() {
                               <Star className="h-4 w-4 text-[#67c970] fill-[#67c970]" />
                               <Star className="h-4 w-4 text-[#67c970] fill-[#67c970]" />
                               <span
-                                className={`ml-2 text-sm ${
-                                  theme === "dark"
-                                    ? "text-gray-300"
-                                    : "text-gray-600"
-                                }`}
+                                className={`ml-2 text-sm text-gray-400`}
                               >
                                 Premium Service
                               </span>
@@ -165,9 +151,7 @@ export default function ServicesPage() {
                         </CardDescription>
                         <div>
                           <h4
-                            className={`font-semibold ${
-                              theme === "dark" ? "text-white" : "text-gray-900"
-                            } mb-3`}
+                            className={`font-semibold font-space text-white mb-3`}
                           >
                             What's Included:
                           </h4>
@@ -179,11 +163,7 @@ export default function ServicesPage() {
                               >
                                 <CheckCircle className="h-5 w-5 text-[#67c970] flex-shrink-0" />
                                 <span
-                                  className={`${
-                                    theme === "dark"
-                                      ? "text-gray-300"
-                                      : "text-gray-600"
-                                  }`}
+                                  className={`text-gray-300`}
                                 >
                                   {feature}
                                 </span>
@@ -241,9 +221,7 @@ export default function ServicesPage() {
                     {/* Process or benefits */}
                     <div>
                       <h3
-                        className={`text-xl font-semibold ${
-                          theme === "dark" ? "text-white" : "text-gray-900"
-                        } mb-4`}
+                        className={`text-xl font-semibold font-space text-white mb-4`}
                       >
                         {service.id === "web-development"
                           ? "Our Development Process"
@@ -564,7 +542,7 @@ export default function ServicesPage() {
 
       {/* Technologies We Use */}
       <section
-        className={`py-16 ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"}`}
+        className={`py-20 bg-gray-900`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -576,17 +554,13 @@ export default function ServicesPage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className={`text-3xl font-bold tracking-tight ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              } sm:text-4xl`}
+              className={`text-3xl font-bold font-space tracking-tight text-white sm:text-4xl`}
             >
               Technologies We Master
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className={`mt-4 text-lg leading-8 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
+              className={`mt-4 text-lg leading-8 text-gray-400`}
             >
               We work with modern, proven technologies to ensure your solutions
               are scalable, secure, and future-ready.
@@ -620,16 +594,10 @@ export default function ServicesPage() {
                 className="flex items-center justify-center"
               >
                 <div
-                  className={`rounded-lg px-4 py-3 shadow-sm border text-center min-w-full ${
-                    theme === "dark"
-                      ? "bg-gray-700 border-gray-600"
-                      : "bg-white border-gray-200"
-                  }`}
+                  className={`rounded-lg px-4 py-3 shadow-sm border text-center min-w-full bg-gray-800 border-white/5 hover:border-[#67c970]/50 transition-colors`}
                 >
                   <span
-                    className={`text-sm font-medium ${
-                      theme === "dark" ? "text-white" : "text-gray-900"
-                    }`}
+                    className={`text-sm font-medium text-gray-300`}
                   >
                     {tech}
                   </span>
@@ -642,11 +610,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section
-        className={`py-16 ${
-          theme === "dark"
-            ? "bg-gray-900 text-gray-100"
-            : " bg-primary text-primary-foreground"
-        }`}
+        className={`py-20 bg-[#67c970] text-black`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -656,10 +620,10 @@ export default function ServicesPage() {
             variants={fadeInUp}
             className="mx-auto max-w-2xl text-center"
           >
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold font-space tracking-tight sm:text-4xl text-black">
               Ready to Get Started?
             </h2>
-            <p className={`mt-6 text-lg leading-8 text-gray-300`}>
+            <p className={`mt-6 text-lg leading-8 text-black/80`}>
               Let's discuss your project requirements and how we can help bring
               your vision to life with our expert services.
             </p>
@@ -678,7 +642,7 @@ export default function ServicesPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto border border-white/20 text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105"
+                className="w-full sm:w-auto border border-black/20 text-black bg-black/5 hover:bg-black/10 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105"
                 asChild
               >
                 <Link href="/portfolio">View Our Work</Link>

@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import { companyInfo, services, projects, testimonials } from "@/data";
 import Hero from "@/components/Hero";
 import AuroraSEOFeature from "@/components/AuroraSEOFeature";
+import FeaturedProjects from "@/components/FeaturedProjects";
 
 // Optimized, lighter animations
 const fadeIn = {
@@ -180,117 +181,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 lg:py-20 bg-gray-900">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <motion.h2
-              variants={fadeIn}
-              className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-white"
-            >
-              Featured Projects
-            </motion.h2>
-            <motion.p
-              variants={fadeIn}
-              className="mt-4 text-base leading-7 sm:text-lg sm:leading-8 text-gray-300"
-            >
-              Showcasing our recent work and success stories
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="mx-auto mt-12 sm:mt-16 grid max-w-2xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 lg:gap-8"
-          >
-            {projects.slice(0, 3).map((project) => (
-              <motion.div key={project.id} variants={fadeIn}>
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 group bg-gray-800 border-gray-700">
-                  <div className="aspect-[16/9] bg-gray-200 rounded-t-lg relative overflow-hidden">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        priority
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                        <Code className="h-12 w-12 sm:h-16 sm:w-16 text-primary opacity-50" />
-                      </div>
-                    )}
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="group-hover:text-white text-white/90 transition-colors duration-200 text-lg">
-                      {project.title}
-                    </CardTitle>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 2).map((tech) => (
-                        <span
-                          key={tech}
-                          className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium bg-gray-700 text-gray-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm sm:text-base leading-6 text-gray-300">
-                      {project.description}
-                    </CardDescription>
-                    <div className="mt-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        asChild
-                        className="w-auto border border-white/20 text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105"
-                      >
-                        <Link
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View Live Site
-                          <ArrowRight className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="mt-8 sm:mt-12 text-center"
-          >
-            <Button
-              variant="outline"
-              asChild
-              className="w-auto border border-white/20 text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105"
-            >
-              <Link href="/portfolio">
-                View All Projects
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <FeaturedProjects />
 
       {/* Aurora SEO Feature */}
       <AuroraSEOFeature />

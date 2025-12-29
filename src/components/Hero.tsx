@@ -1,176 +1,98 @@
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+"use client";
+
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Constellation from "@/components/Constellation";
 
-// Optimized, lighter animations
+// Optimized animations
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: "easeOut" },
+  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }, // Custom ease for "premium" feel
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
     },
   },
 };
 
 const Hero = () => {
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
-  const [showImage, setShowImage] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    // Delay starting the video load until the page has finished initial work
-    const startLoading = () => {
-      // small delay so image/LCP gets priority
-      const t = setTimeout(() => setShouldLoadVideo(true), 600);
-      return () => clearTimeout(t);
-    };
-
-    if (document.readyState === "complete") {
-      const cleanup = startLoading();
-      return cleanup;
-    }
-
-    window.addEventListener("load", startLoading);
-    return () => window.removeEventListener("load", startLoading);
-  }, []);
-
-  useEffect(() => {
-    if (!shouldLoadVideo || !videoRef.current) return;
-
-    const video = videoRef.current;
-
-    const handleLoadedData = () => {
-      // mark ready so we can fade the video in
-      setVideoReady(true);
-      // Try to play (in case autoplay was blocked earlier)
-      video.play().catch(() => {
-        // Wait for user interaction if autoplay blocked
-        const playOnInteraction = () => {
-          video.play().catch(() => {});
-          document.removeEventListener("click", playOnInteraction);
-          document.removeEventListener("touchstart", playOnInteraction);
-        };
-        document.addEventListener("click", playOnInteraction);
-        document.addEventListener("touchstart", playOnInteraction);
-      });
-
-      // After the fade completes remove the image element to free memory
-      const removeTimer = setTimeout(() => setShowImage(false), 750);
-      return () => clearTimeout(removeTimer);
-    };
-
-    const handleError = () => {
-      // If video fails, keep the image (videoReady stays false)
-      setVideoReady(false);
-    };
-
-    video.addEventListener("loadeddata", handleLoadedData);
-    video.addEventListener("error", handleError);
-
-    return () => {
-      video.removeEventListener("loadeddata", handleLoadedData);
-      video.removeEventListener("error", handleError);
-    };
-  }, [shouldLoadVideo]);
-
   return (
-    <div>
-      <section className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center relative pt-16 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Render the image while showImage is true */}
-          {showImage && (
-            <Image
-              src="/aurora-landscape.jpg"
-              alt="Aurora landscape"
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-              quality={85}
-            />
-          )}
+    <div className="relative w-full h-screen overflow-hidden bg-gray-950">
+      {/* Background: Constellation Magic */}
+      <Constellation />
 
-          {/* Video - only added to the DOM when shouldLoadVideo is true to avoid blocking LCP */}
-          {shouldLoadVideo && (
-            <video
-              ref={videoRef}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                videoReady ? "opacity-100" : "opacity-0"
-              }`}
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source src="/aurora_infinite_loop.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
+      {/* Gradient Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/90 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(103,201,112,0.08),transparent_50%)] pointer-events-none" />
 
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/45 via-gray-900/90 to-gray-900"></div>
-        </div>
-
-        {/* Content */}
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={staggerContainer}
-            className="mx-auto max-w-4xl text-center"
-          >
-            <motion.h1
-              variants={fadeIn}
-              className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl"
-            >
-              <span className="text-white">Crafting Digital Excellence</span>
-              <span className="text-white"> </span>
-              <span className="text-[#67c970] block sm:inline">for Africa</span>
-            </motion.h1>
-            <motion.p
-              variants={fadeIn}
-              className="mt-6 text-base leading-7 sm:text-lg sm:leading-8 max-w-2xl mx-auto text-gray-300"
-            >
-              Guiding Africa's tech frontier like the Northern
-              Lights—illuminating innovation, unlocking opportunity, and driving
-              digital transformation.
-            </motion.p>
-            <motion.div
-              variants={fadeIn}
-              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
-            >
-              <Button
-                size="lg"
-                asChild
-                className="w-full sm:w-auto bg-white/90 text-gray-900 hover:bg-gray-100 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105 hover:shadow-md"
-              >
-                <Link href="/contact">
-                  Let's Build Together
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="w-full sm:w-auto border border-white/20 text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md shadow-sm transition-transform duration-200 ease-out hover:scale-105"
-              >
-                <Link href="/portfolio">View Our Work</Link>
-              </Button>
-            </motion.div>
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+          className="max-w-5xl text-center"
+        >
+          {/* Badge / Label */}
+          <motion.div variants={fadeIn} className="mb-6 flex justify-center">
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-[#67c970] backdrop-blur-sm">
+              Northern Lights for Africa's Tech Frontier
+            </span>
           </motion.div>
-        </div>
-      </section>
+
+          {/* Main Heading */}
+          <motion.h1
+            variants={fadeIn}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-space text-white leading-[1.1]"
+          >
+            Illuminating the <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">
+              Digital Frontier.
+            </span>
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p
+            variants={fadeIn}
+            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl leading-relaxed text-gray-400 max-w-2xl mx-auto font-sans"
+          >
+            We engineer award-winning digital experiences that guide your
+            business through the complexities of the modern web.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={fadeIn}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+          >
+            <Button
+              size="lg"
+              asChild
+              className="w-full sm:w-auto h-12 px-8 rounded-full bg-[#67c970] text-gray-950 hover:bg-[#5ab562] hover:scale-105 transition-all duration-300 font-medium text-base"
+            >
+              <Link href="/contact">
+                Start Your Project
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full sm:w-auto h-12 px-8 rounded-full border-white/10 text-white bg-white/5 hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300 font-medium text-base"
+            >
+              <Link href="/portfolio">View Our Work</Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };

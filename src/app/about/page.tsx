@@ -50,7 +50,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-gray-900">
+      <section className="pt-32 pb-12 bg-gray-950">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -60,10 +60,10 @@ export default function AboutPage() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+              className="text-4xl font-bold font-space tracking-tight text-white sm:text-6xl"
             >
-              <span className="text-white/90">About Aurora</span>
-              <span className="text-[#67c970]"> Software Labs</span>
+              <span className="text-white">About Aurora</span>
+              <span className="text-[#67c970]">.</span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}
@@ -78,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-20 bg-gray-950">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -94,7 +94,7 @@ export default function AboutPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#67c970]/10">
                       <Target className="h-6 w-6 text-[#67c970]" />
                     </div>
-                    <CardTitle className="text-2xl text-white/90">
+                    <CardTitle className="text-2xl font-space text-white">
                       Our Mission
                     </CardTitle>
                   </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#67c970]/10">
                       <Eye className="h-6 w-6 text-[#67c970]" />
                     </div>
-                    <CardTitle className="text-2xl text-white/90">
+                    <CardTitle className="text-2xl font-space text-white">
                       Our Vision
                     </CardTitle>
                   </div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#67c970]/10">
                       <Users className="h-6 w-6 text-[#67c970]" />
                     </div>
-                    <CardTitle className="text-2xl text-white/90">
+                    <CardTitle className="text-2xl font-space text-white">
                       Our Values
                     </CardTitle>
                   </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company Story */}
-      <section className="py-16 bg-gray-800">
+      <section className="py-20 bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -175,7 +175,7 @@ export default function AboutPage() {
             className="mx-auto max-w-3xl"
           >
             <motion.div variants={fadeInUp} className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-3xl font-bold font-space tracking-tight text-white sm:text-4xl">
                 Our Story
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
@@ -215,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-20 bg-gray-950">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -226,9 +226,9 @@ export default function AboutPage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              className="text-3xl font-bold font-space tracking-tight text-white sm:text-4xl"
             >
-              Why Choose Aurora Software Labs?
+              Why Choose Aurora?
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -248,13 +248,13 @@ export default function AboutPage() {
           >
             {whyChooseUs.map((reason, index) => (
               <motion.div key={reason.title} variants={fadeInUp}>
-                <Card className="h-full hover:shadow-lg transition-shadow border bg-gray-800 border-white/10">
+                <Card className="h-full hover:shadow-lg transition-shadow border bg-gray-900 border-white/5 hover:border-[#67c970]/30 transition-colors duration-300">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-3">
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white font-bold text-sm">
                         {index + 1}
                       </span>
-                      <span className="text-white">{reason.title}</span>
+                      <span className="text-white font-space font-bold">{reason.title}</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -270,7 +270,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats/Achievements */}
-      <section className="py-16 bg-gray-800 text-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -281,9 +281,9 @@ export default function AboutPage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl font-bold tracking-tight sm:text-4xl"
+              className="text-3xl font-bold font-space tracking-tight sm:text-4xl"
             >
-              Our Impact in Numbers
+              Our Impact
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -301,21 +301,21 @@ export default function AboutPage() {
             className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-3 lg:max-w-none"
           >
             <motion.div variants={fadeInUp} className="text-center">
-              <div className="text-4xl font-bold text-[#67c970]">3+</div>
+              <div className="text-5xl font-bold font-space text-[#67c970]">3+</div>
               <div className="mt-2 text-lg">Projects Completed</div>
               <div className="mt-1 text-sm text-gray-300">
                 Successfully delivered and deployed
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="text-center">
-              <div className="text-4xl font-bold text-[#67c970]">100%</div>
+              <div className="text-5xl font-bold font-space text-[#67c970]">100%</div>
               <div className="mt-2 text-lg">Client Satisfaction</div>
               <div className="mt-1 text-sm text-gray-300">
                 Every client has been delighted
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="text-center">
-              <div className="text-4xl font-bold text-[#67c970]">24/7</div>
+              <div className="text-5xl font-bold font-space text-[#67c970]">24/7</div>
               <div className="mt-2 text-lg">Support Available</div>
               <div className="mt-1 text-sm text-gray-300">
                 Always here when you need us
