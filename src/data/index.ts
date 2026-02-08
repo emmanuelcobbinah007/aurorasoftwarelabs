@@ -53,6 +53,16 @@ export const services = [
 
 export const projects = [
   {
+  id: "shopaurora",
+  title: "ShopAurora",
+  description:
+    "A comprehensive e-commerce infrastructure for Africa, empowering merchants to build, manage, and scale online stores with integrated local payments and multi-channel notification systems.",
+  url: "https://shopaurora.africa",
+  image: "/shopaurora.png",
+  technologies: ["Next.js", "Prisma", "Postgres", "Tailwind CSS", "Paystack", "Twilio"],
+  category: "E-commerce & Payments",
+},
+  {
     id: "geniy",
     title: "Geniy",
     description:
